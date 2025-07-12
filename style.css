@@ -1,0 +1,371 @@
+/* --- General Styling & Variables --- */
+:root {
+    --primary-color: #E85A4F;
+    --secondary-color: #8E8D8A;
+    --dark-color: #3a3a3a;
+    --light-color: #f9f9f9;
+    --white-color: #ffffff;
+    --shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+    padding: 4rem 0;
+}
+
+/* --- Header & Navbar --- */
+header {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d14b40;
+}
+
+/* --- Hero Section (Full Screen) --- */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Menata konten secara vertikal */
+    align-items: center;
+    justify-content: center;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('images/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#hero .hero-content {
+    color: var(--white-color);
+    margin-bottom: 3rem;
+}
+
+#hero h1 {
+    color: var(--white-color);
+    font-size: 4.2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+     text-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+#hero .hero-cta {
+    display: inline-block;
+    background-color: #007BFF;
+    color: var(--white-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#hero .hero-cta:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* --- Flavor Teaser & Tags --- */
+.flavor-teaser {
+    margin-top: 2rem;
+}
+
+.flavor-teaser strong {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.flavor-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.flavor-tag {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark-color);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.flavor-tag:hover {
+    background-color: #FFC107;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Varian Section --- */
+.section-title {
+    color: var(--dark-color);
+}
+
+.varian-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.varian-card {
+    background: var(--white-color);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-margin-top: 100px; /* Jarak untuk anchor link agar tidak tertutup navbar */
+}
+
+.varian-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.varian-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center 70%;
+}
+
+.varian-card h3 {
+    margin: 1rem 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.varian-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* --- Tentang & Kontak Section --- */
+#tentang, #kontak {
+    padding: 4rem 0;
+}
+.tentang-content, .kontak-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#kontak .hero-cta {
+    display: inline-flex; /* Menata ikon dan teks agar sejajar */
+    align-items: center;  /* Memastikan ikon dan teks berada di tengah secara vertikal */
+    gap: 10px;  
+    border-radius: 1rem;
+    background-color: #25D366;
+    color: var(--white-color); 
+    text-decoration: none;
+    padding: 12px 24px;
+      font-weight: 600;
+}
+#kontak .hero-cta:hover {
+    background-color: #fff01d;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(245, 200, 196, 0.4);
+}
+/* TAMBAHKAN BLOK BARU INI UNTUK MENGATUR IKONNYA */
+.whatsapp-icon {
+    width: 24px;  /* Lebar ikon */
+    height: 24px; /* Tinggi ikon */
+}
+
+/* --- Testimoni Section --- */
+.testimoni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimoni-card {
+    background: var(--light-color); /* Latar belakang sedikit beda agar menonjol */
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* KODE BARU - GUNAKAN INI */
+.testimoni-avatar {
+    width: 100%; /* DIUBAH: Membuat gambar memenuhi lebar kartu */
+    height: 100%; /* DIUBAH: Tinggi otomatis agar rasio screenshot pas */
+    border-radius: 10px; /* DIUBAH: Dari lingkaran menjadi kotak sudut tumpul */
+    object-fit: contain; /* Ganti ke 'contain' agar seluruh screenshot terlihat */
+    margin-bottom: 1.5rem; /* Sedikit lebih besar jaraknya */
+    max-height: 250px; /* Batas tinggi maksimal agar tidak terlalu besar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan lebih modern */
+}
+.testimoni-rating {
+    color: #FFC107; /* Warna emas untuk bintang */
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimoni-text {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Membuat teks mengisi ruang agar tinggi kartu sama */
+}
+
+.testimoni-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0;
+}
+/* --- Footer --- */
+footer {
+    background: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* --- Animasi Saat Scroll --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media(max-width: 768px) {
+    #hero h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+    .nav-links { display: none; }
+    #hero { padding-top: 5rem; } /* Beri jarak agar tidak terlalu nempel dengan navbar di HP */
+}
